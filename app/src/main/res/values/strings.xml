@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">MemesBox</string>
     <string name="title_home">Home</string>
+    <string name="title_studio">Studio</string>
+    <string name="title_favorite">Favorites</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 

@@ -3,6 +3,7 @@ package com.marc_wieser.memesbox
 import android.os.Bundle
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
 import com.marc_wieser.memesbox.Adapters.PagerAdapter
 
 class MainActivity : AppCompatActivity() {
@@ -14,4 +15,8 @@ class MainActivity : AppCompatActivity() {
         pager.adapter = PagerAdapter(supportFragmentManager, this)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.actionbar_menu, menu)
+        return true
+    }
 }

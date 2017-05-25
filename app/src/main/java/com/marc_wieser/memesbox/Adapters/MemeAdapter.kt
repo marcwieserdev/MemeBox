@@ -8,6 +8,7 @@ import android.os.Build
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import com.marc_wieser.memesbox.Extensions.dp
@@ -23,7 +24,10 @@ import com.marc_wieser.memesbox.R
 class MemeAdapter(private var dataset: Array<MemeModel>, val uniquePlay : Boolean = false) : RecyclerView.Adapter<MemeAdapter.ViewHolder>() {
     private val TYPE_MEME : Int = 1
 
-    class ViewHolder(view: ImageButton) : RecyclerView.ViewHolder(view)
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
+        val soundBtn: ImageButton = view.findViewById(R.id.action_image) as ImageButton
+        val favouriteBtn: ImageButton = view.findViewById(R.id.fav_btn) as ImageButton
+    }
 
     override fun getItemCount(): Int = dataset.size
 
@@ -33,9 +37,9 @@ class MemeAdapter(private var dataset: Array<MemeModel>, val uniquePlay : Boolea
         return //TODO : Find a way to have a nice light overlay on all ImageButton when selected
     }
 
-    override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val model : MemeModel = dataset[position]
-        val image : ImageButton = holder?.itemView as ImageButton
+        val image : ImageButton = holder.soundBtn
         var player: MediaPlayer? = null
         image.setImageDrawable(ContextCompat.getDrawable(holder.itemView?.context, model.imageResource))
         image.setOnClickListener {
@@ -69,7 +73,7 @@ class MemeAdapter(private var dataset: Array<MemeModel>, val uniquePlay : Boolea
             TYPE_MEME -> {
                 val inflater = LayoutInflater.from(parent?.context)
                 val layout = inflater.inflate(R.layout.item_actionbtn, parent, false)
-                ViewHolder(layout as ImageButton)
+                ViewHolder(layout)
             }
             else -> throw UnsupportedOperationException()
         }

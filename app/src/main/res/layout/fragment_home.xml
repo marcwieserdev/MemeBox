@@ -10,7 +10,18 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/Captions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ambient Memes" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/meme_ambient_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <TextView
                 style="@style/Captions"
@@ -21,17 +32,6 @@
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/meme_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                style="@style/Captions"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Ambient Memes" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/meme_ambient_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>

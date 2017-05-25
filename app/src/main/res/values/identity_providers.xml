@@ -1,0 +1,9 @@
+<resources>
+    <!-- Facebook -->
+    <string name="facebook_application_id" translatable="false">1854739971410478</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb1854739971410478</string>
+
+    <!-- Twitter -->
+    <string name="twitter_consumer_key" translatable="false">6SEsnZXRtQZuDvpr5dLa53d1g</string>
+    <string name="twitter_consumer_secret" translatable="false">mncM1I97Y680foyzfKTkHL5wWumT2tX9HcSipgnJ7E2NKzF0op</string>
+</resources>

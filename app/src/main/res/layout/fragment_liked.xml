@@ -4,10 +4,7 @@
     android:layout_height="match_parent"
     tools:context="com.marc_wieser.memesbox.Fragments.FavoriteFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <include android:id="@+id/not_connected_error" layout="@layout/fragment_not_connected"/>
+    <include android:id="@+id/regular_fragment" layout="@layout/fragment_favorite_list"/>
 
 </FrameLayout>

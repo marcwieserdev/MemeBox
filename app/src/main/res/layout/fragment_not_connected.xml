@@ -26,7 +26,7 @@
         android:text="You need to be logged in to see your favorites memes" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

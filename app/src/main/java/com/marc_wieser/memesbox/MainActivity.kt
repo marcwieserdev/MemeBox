@@ -47,16 +47,20 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+    fun startLoginFlow(): Unit{
+        startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder()
+                .setProviders(Arrays.asList(
+                        AuthUI.IdpConfig.Builder(AuthUI.EMAIL_PROVIDER).build(),
+                        AuthUI.IdpConfig.Builder(AuthUI.GOOGLE_PROVIDER).build(),
+                        AuthUI.IdpConfig.Builder(AuthUI.FACEBOOK_PROVIDER).build(),
+                        AuthUI.IdpConfig.Builder(AuthUI.TWITTER_PROVIDER).build()))
+                .build(), RC_SIGN_IN)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when(item?.itemId){
             R.id.menu_login -> {
-                startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder()
-                        .setProviders(Arrays.asList(
-                                AuthUI.IdpConfig.Builder(AuthUI.EMAIL_PROVIDER).build(),
-                                AuthUI.IdpConfig.Builder(AuthUI.GOOGLE_PROVIDER).build(),
-                                AuthUI.IdpConfig.Builder(AuthUI.FACEBOOK_PROVIDER).build(),
-                                AuthUI.IdpConfig.Builder(AuthUI.TWITTER_PROVIDER).build()))
-                        .build(), RC_SIGN_IN)
+                startLoginFlow()
             }
             R.id.menu_logout -> {
                 AuthUI.getInstance().signOut(this).addOnCompleteListener {

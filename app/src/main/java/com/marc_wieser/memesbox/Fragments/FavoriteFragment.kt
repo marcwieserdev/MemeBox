@@ -36,7 +36,10 @@ class FavoriteFragment : Fragment() {
             updateFragmentVisibility(it)
         }
         updateFragmentVisibility((activity as MainActivity).fireAuth?.currentUser != null, v)
+        v.findViewById(R.id.login).setOnClickListener {
+            (activity as MainActivity).startLoginFlow()
+        }
         return v
     }
 
-}// Required empty public constructor
+}
